@@ -2,12 +2,7 @@ Fine-Tuning Guide
 
 Step 1: Preprocess the Data
 
-Run the preprocess.py script to generate the metadata.csv file. This file will contain the audio-text pairs, essential for training.
-
-python preprocess.py
-
-	•	Input: Ensure that the audio files (e.g., .wav) are placed in a folder, and preprocess.py will extract the necessary information to create metadata.csv.
-	•	Output: A metadata.csv file with audio-text pairs for training.
+Check the asr_data_preprocessing.ipynb for details
 
 Step 2: Create the Dataset
 
