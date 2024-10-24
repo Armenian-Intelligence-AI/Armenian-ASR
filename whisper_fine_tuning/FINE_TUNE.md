@@ -2,6 +2,7 @@ Fine-Tuning Guide
 
 Step 1: Preprocess the Data
 
+You'll need to provide a directory path, containing files in item_id.wav and item_id.txt formats, for audio and txt samples respectively.   
 Check the asr_data_preprocessing.ipynb for details
 
 Step 2: Create the Dataset
