@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t fb-asr-tf:latest ./deploy
+          docker build -t fb-asr-tf:latest ./deployment
 
       - name: Tag Docker image
         run: |
