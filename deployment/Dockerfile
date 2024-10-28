@@ -15,7 +15,7 @@ RUN pip3 install uvicorn==0.30.5
 RUN pip3 install librosa==0.10.2 
 RUN pip3 install transformers==4.44.0
 RUN pip3 install pydub==0.25.1
-RUN pip3 install pyannote==3.3.0
+RUN pip3 install pyannote.audio==3.3.0
 
 # Use a build argument to force cache invalidation for the FastAPI app copy
 ARG CACHEBUST=1
