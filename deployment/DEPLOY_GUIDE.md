@@ -51,7 +51,7 @@ cd deploy_data
 Archive the necessary files into `model_pt.tar.gz`:
 
 ```sh
-tar -czvf model_pt.tar.gz whisper_arm_stt ner_model
+tar -czvf model_pt.tar.gz whisper_arm_stt audio_classifier_model ner_model
 ```
 
 ### 2.3. Upload to S3
