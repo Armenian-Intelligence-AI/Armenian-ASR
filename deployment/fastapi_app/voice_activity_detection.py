@@ -55,7 +55,7 @@ HYPER_PARAMETERS = {
 # Instantiate the pipeline with the parameters
 vad_pipeline.instantiate(HYPER_PARAMETERS)
 
-def run_audio_classifier(audio_base64: str) -> bool:
+def run_voice_activity_detection(audio_base64: str) -> bool:
     # Decode the Base64 audio
     audio_data = base64.b64decode(audio_base64)
     audio_file = BytesIO(audio_data)
