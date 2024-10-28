@@ -1,5 +1,5 @@
 # Use the official PyTorch image compatible with AMD64
-FROM --platform=linux/amd64 pytorch/pytorch:2.1.2-cuda11.8-cudnn8-runtime
+FROM --platform=linux/amd64 pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel
 
 # Install necessary dependencies
 RUN apt-get update && \
