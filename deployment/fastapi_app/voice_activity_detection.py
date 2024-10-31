@@ -55,22 +55,12 @@ HYPER_PARAMETERS = {
 # Instantiate the pipeline with the parameters
 vad_pipeline.instantiate(HYPER_PARAMETERS)
 
-def run_voice_activity_detection(audio_base64: str) -> bool:
-    # Decode the Base64 audio
-    audio_data = base64.b64decode(audio_base64)
-    audio_file = BytesIO(audio_data)
-
-    # Load audio into pydub
+def run_audio_classifier(audio_file: BytesIO) -> bool:
     audio = AudioSegment.from_file(audio_file)
-
-    # Convert pydub audio to a wav format in-memory
     wav_io = BytesIO()
     audio.export(wav_io, format="wav")
     wav_io.seek(0)
 
-    # Run the VAD pipeline on the converted wav audio with an "uri"
     output = vad_pipeline({"audio": wav_io, "uri": "audio_clip"})
-
-    # Check if any speech segments were detected
     has_speech = any(segment for segment in output.get_timeline().support())
     return has_speech
