@@ -18,6 +18,7 @@ RUN pip3 install librosa==0.10.2
 RUN pip3 install transformers==4.44.0
 RUN pip3 install pydub==0.25.1
 RUN pip3 install pyannote.audio==3.1.1 -c constraints.txt
+RUN pip3 install python-multipart
 
 # Use a build argument to force cache invalidation for the FastAPI app copy
 ARG CACHEBUST=1
