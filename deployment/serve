@@ -1,2 +1,2 @@
 #!/bin/bash
-uvicorn fastapi_app.inference:app --host 0.0.0.0 --port 8080 --workers 4
+uvicorn fastapi_app.inference:app --host 0.0.0.0 --port 8080 --workers 2
