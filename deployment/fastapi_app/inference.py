@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from .asr_model import predict_asr
 from .ner_model import run_ner_classifier
+from .voice_activity_detection import run_voice_activity_detector
 import logging
 from io import BytesIO
 
@@ -13,6 +14,12 @@ app = FastAPI()
 async def invocations(file: UploadFile = File(...)):
     # Read the uploaded file
     audio_data = await file.read()
+    audio_file = BytesIO(audio_data)
+    
+    # Check if the uploaded audio contains speech
+    is_speech = run_voice_activity_detector(audio_file)
+    if not is_speech:
+        return {'prediction': '', 'duration': 0, 'is_speech': False}
 
     # Run the ASR prediction
     prediction_text, duration = predict_asr(audio_data)
