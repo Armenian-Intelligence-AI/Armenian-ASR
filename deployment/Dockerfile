@@ -9,12 +9,15 @@ RUN apt-get update && \
 # Create the program directory
 RUN mkdir -p /opt/program
 
+COPY constraints.txt .
+
 # Install FastAPI, Uvicorn, librosa, torch, and transformers
 RUN pip3 install fastapi==0.112.0 
 RUN pip3 install uvicorn==0.30.5 
 RUN pip3 install librosa==0.10.2 
 RUN pip3 install transformers==4.44.0
 RUN pip3 install pydub==0.25.1
+RUN pip3 install pyannote.audio==3.1.1 -c constraints.txt
 RUN pip3 install python-multipart
 
 # Use a build argument to force cache invalidation for the FastAPI app copy
